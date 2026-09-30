@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ImageView from "../views/image.vue"
+import NewsView from "../views/news.vue"
 const routes = [
   {
     path: '/',
@@ -10,6 +11,10 @@ const routes = [
   {
     path: "/image",
     component: ImageView
+  },
+  {
+    path:"/news",
+    component:NewsView
   }
 ]
 

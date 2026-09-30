@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/api/fortune", require("./routes/fortune"))
 app.use("/api/image", require("./routes/image"))
-
+app.use("/api/news", require("./routes/news"))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
