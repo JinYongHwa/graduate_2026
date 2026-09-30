@@ -30,10 +30,10 @@ JPG·PNG·WebP, 최대 20MB를 지원하며 사진을 최대 변 길이 1200px�
 
 ### 수업에서 읽을 순서
 
-1. `readPhoto()`로 선택한 사진을 읽습니다 (`front/src/lib/photo.js`).
+1. `readImage()`로 선택한 사진을 읽고 모델 입력 크기로 줄입니다 (`front/src/lib/image.js`).
 2. `createDetector()`로 모델을 준비합니다.
-3. 얼굴은 전체 사진에서 위치를 찾은 뒤 얼굴 주변을 잘라 다시 `estimateFaces()`로 분석합니다 (`front/src/lib/face.js`). 작은 얼굴의 눈·코·입 오차를 줄이고, 잘라낸 영역의 좌표를 사진 좌표로 되돌립니다. 포즈는 `estimatePoses(canvas)`로 좌표를 얻습니다.
-4. `strokeRect()`·`arc()`·`lineTo()`로 사진 위에 결과를 그립니다.
+3. 사진을 `estimateFaces()` 또는 `estimatePoses()`에 넣어 결과 배열을 받습니다 (`face.vue`, `pose.vue`).
+4. 결과 배열을 `drawImage()`에 전달합니다. 사진 표시와 박스·점·연결선 그리기는 모두 `front/src/lib/image.js`에서 처리합니다.
 
 얼굴 탐지와 특징점은 요청한 `@tensorflow-models/face-detection`,
 `@tensorflow-models/face-landmarks-detection`을 사용합니다.
