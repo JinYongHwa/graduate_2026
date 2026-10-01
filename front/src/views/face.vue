@@ -18,8 +18,8 @@
 import { markRaw } from 'vue'
 import * as faceDetection from '@tensorflow-models/face-detection'
 import * as faceLandmarksDetection from '@tensorflow-models/face-landmarks-detection'
-import { prepareTensorFlow, readImage, drawOverlay } from '../lib/image'
-import { estimatePhotoFaces } from '../lib/face-analysis'
+import { prepareTensorFlow, readImage, drawOverlay, estimatePhotoFaces } from '../lib/image'
+
 
 // 모델은 한 번만 읽고 다음 사진에서도 재사용합니다.
 let faceDetector, landmarkDetector
